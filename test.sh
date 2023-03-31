@@ -60,6 +60,8 @@ cd ../../LAYAAIR3-DOCS
 
 pwd
 
+echo $1 $2
+
 if [ $1 -a  $1 == "submit_git" ]; then
     echo "打包：提交代码"
     git pull
