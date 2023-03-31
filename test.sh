@@ -9,15 +9,15 @@ targetDir=../UMC_PET_H5/dist
 if [ ! -d "${targetDir}" ]; then
     echo ${targetDir}"文件不存在"
     exit;
-    else
-    echo ${targetDir}"存在"
+    # else
+    # echo ${targetDir}"存在"
 fi
 
 if [ ! -d "${resourceDir}" ]; then
     echo ${targetDir}"文件不存在"
     exit;
-    else
-    echo ${resourceDir}"存在"
+    # else
+    # echo ${resourceDir}"存在"
 fi
 
 
@@ -59,8 +59,6 @@ sed -i  "s/bundle.js/${bundle_name}/g" index.html  #改文件内容
 cd ../../LAYAAIR3-DOCS
 
 pwd
-
-echo $1 $2
 
 commit_msg=$2 || $current_time
 
