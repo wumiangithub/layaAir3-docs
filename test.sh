@@ -56,9 +56,16 @@ mv js/bundle.js js/${bundle_name}
 sed -i  "s/index.js/${index_name}/g" index.html   #改文件内容
 sed -i  "s/bundle.js/${bundle_name}/g" index.html  #改文件内容
 
+cd ../../LAYAAIR3-DOCS
+
+pwd
 
 if [ $1 -a  $1 == "submit_git" ]; then
     echo "打包：提交代码"
+    git pull
+    git add .
+    git commit -m $time_cuo
+    git push 
     else
     echo "打包：不提交代码"
 fi
