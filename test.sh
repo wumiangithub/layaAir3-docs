@@ -65,7 +65,7 @@ commit_msg=$2 || $current_time
 if [ $1 -a  $1 == "submit_git" ]; then
     echo "打包：提交代码"
 
-   if [ ! $2]; then
+   if [ ! $2 ]; then
     echo "请输入commit内容"
     exit
    fi
