@@ -2,9 +2,9 @@
 
 echo "启动脚本"
 
-resourceDir=./dist
-targetDir=../UMC_PET_H5/dist
-# targetDir=./pubDir
+resourceDir=./dist   #资源目录
+targetDir=../UMC_PET_H5/dist  #目标路径
+backResourceProjectPath=../../LAYAAIR3-DOCS    #返回资源项目目录
 
 if [ ! -d "${targetDir}" ]; then
     echo ${targetDir}"文件不存在"
@@ -56,7 +56,7 @@ mv js/bundle.js js/${bundle_name}
 sed -i  "s/index.js/${index_name}/g" index.html   #改文件内容
 sed -i  "s/bundle.js/${bundle_name}/g" index.html  #改文件内容
 
-cd ../../LAYAAIR3-DOCS
+cd ${backResourceProjectPath}  #返回资源项目目录
 
 pwd
 
@@ -68,7 +68,7 @@ then
 
    if [ ! $2 ]
    then
-    echo "请输入commit内容"
+    echo "请输入git commit内容"
     exit
    fi
 
@@ -79,7 +79,7 @@ then
     git commit -m $commit_msg
 
     git push
-    
+
 else
     echo "打包：不提交代码"
 fi
