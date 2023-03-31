@@ -62,11 +62,13 @@ pwd
 
 echo $1 $2
 
+commit_msg=$2 || $current_time
+
 if [ $1 -a  $1 == "submit_git" ]; then
     echo "打包：提交代码"
     git pull
     git add .
-    git commit -m $time_cuo
+    git commit -m $commit_msg
     git push 
     else
     echo "打包：不提交代码"
