@@ -73,9 +73,13 @@ then
    fi
 
     git pull
+
     git add .
+
     git commit -m $commit_msg
+
     git push
+    
 else
     echo "打包：不提交代码"
 fi
